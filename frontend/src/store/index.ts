@@ -2,14 +2,14 @@ import { createStore } from 'vuex';
 
 import modal, { ModalStore } from '../gam_sdk_ui/vue/store/modal';
 import main, { MainStore } from './main';
-import workspace, { WorkspaceStore } from './workspace';
+import scene, { SceneStore } from './scene';
 
 export type MainTree = {
   main: MainStore;
   modal: ModalStore;
-  workspace: WorkspaceStore;
+  workspace: SceneStore;
 };
 
 export default createStore({
-  modules: { main, modal, workspace },
+  modules: { main, modal, scene },
 });

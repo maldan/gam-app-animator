@@ -8,12 +8,12 @@
         title="explorer"
         :scrollY="true"
       >
-        <workspace-explorer />
+        <scene-explorer />
       </ui-block>
-      <ui-block :class="$style.scene" title="scene"><workspace-scene /></ui-block>
+      <ui-block :class="$style.scene" title="workspace"><scene-workspace /></ui-block>
     </div>
     <ui-block :class="$style.timeline" title="timeline" :scrollY="true">
-      <workspace-timeline />
+      <scene-timeline />
     </ui-block>
   </div>
 </template>

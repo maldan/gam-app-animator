@@ -1,14 +1,14 @@
 <template>
   <div :class="$style.component">
-    <div :class="$style.name" v-for="object in $store.state.workspace.objects" :key="object">
+    <div :class="$style.name" v-for="object in $store.state.scene.objects" :key="object">
       {{ object.name }}
     </div>
 
     <div
       :class="$style.object"
-      v-for="(object, index) in $store.state.workspace.objects"
+      v-for="(object, index) in $store.state.scene.objects"
       :key="object"
-      :style="{ top: 5 + index * 22 + 'px' }"
+      :style="{ top: 7 + index * 22 + 'px' }"
     >
       <div
         :class="$style.item"
@@ -43,6 +43,7 @@ export default defineComponent({
   height: auto;
   min-height: 100% !important;
   background-color: #222222;
+  user-select: none;
 
   .name {
     background-color: #353535;
@@ -62,8 +63,8 @@ export default defineComponent({
       position: absolute;
       left: 0;
       top: 0;
-      width: 12px;
-      height: 12px;
+      width: 8px;
+      height: 8px;
       background-color: #fe9300;
       transform: rotate(45deg);
     }

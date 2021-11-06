@@ -1,11 +1,11 @@
 import { ActionContext } from 'vuex';
 import { MainTree } from '.';
 
-export type WorkspaceStore = {
+export type SceneStore = {
   scene: any;
   objects: any[];
 };
-export type WorkspaceActionContext = ActionContext<WorkspaceStore, MainTree>;
+export type SceneActionContext = ActionContext<SceneStore, MainTree>;
 
 export default {
   namespaced: true,

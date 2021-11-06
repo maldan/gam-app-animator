@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.explorer">
-    <div :class="$style.item" v-for="object in $store.state.workspace.objects" :key="object.id">
+    <div :class="$style.item" v-for="object in $store.state.scene.objects" :key="object.id">
       {{ object.name }}
     </div>
   </div>

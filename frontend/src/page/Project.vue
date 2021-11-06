@@ -1,7 +1,6 @@
 <template>
   <div class="main">
-    <ui-button text="Create Project" icon="plus" />
-    <ui-button @click="$router.push('/project/228')" text="Open Project" icon="arrow_up" />
+    <div @click="$router.push('/scene/4')" v-for="x in 10" :key="x">{{ x }}</div>
   </div>
 </template>
 

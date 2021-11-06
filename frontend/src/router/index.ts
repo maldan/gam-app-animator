@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import Main from '../page/Main.vue';
-import Workspace from '../page/Workspace.vue';
+import Scene from '../page/Scene.vue';
+import Project from '../page/Project.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -9,9 +10,14 @@ const routes: Array<RouteRecordRaw> = [
     component: Main,
   },
   {
-    path: '/workspace/:id',
-    name: 'Workspace',
-    component: Workspace,
+    path: '/scene/:id',
+    name: 'Scene',
+    component: Scene,
+  },
+  {
+    path: '/Project/:id',
+    name: 'Project',
+    component: Project,
   },
 ];
 
