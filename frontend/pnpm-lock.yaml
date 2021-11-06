@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/node': ^15.0.1
+  '@types/three': ^0.133.1
   '@typescript-eslint/eslint-plugin': ^4.33.0
   '@typescript-eslint/parser': ^4.18.0
   '@vue/cli-plugin-babel': ~4.5.0
@@ -24,6 +25,7 @@ specifiers:
   prettier: ^2.2.1
   regenerator-runtime: ^0.13.9
   sass-loader: ^8.0.2
+  three: ^0.134.0
   typescript: ~4.1.6
   vue: ^3.2.21
   vue-class-component: ^8.0.0-rc.1
@@ -31,10 +33,12 @@ specifiers:
   vuex: ^4.0.2
 
 dependencies:
+  '@types/three': 0.133.1
   axios: 0.21.4
   core-js: 3.19.1
   moment: 2.29.1
   regenerator-runtime: 0.13.9
+  three: 0.134.0
   vue: 3.2.21
   vue-class-component: 8.0.0-rc.1_vue@3.2.21
   vue-router: 4.0.12_vue@3.2.21
@@ -1434,6 +1438,10 @@ packages:
   /@types/tapable/1.0.8:
     resolution: {integrity: sha512-ipixuVrh2OdNmauvtT51o3d8z12p6LtFW9in7U79der/kwejjdNchQC5UMn5u/KxNoM7VHHOs/l8KS8uHxhODQ==}
     dev: true
+
+  /@types/three/0.133.1:
+    resolution: {integrity: sha512-XqBrP/+kbs+o0CYRhCVVE95v7FaL2bO5Z7+3VQJE0nEyjo+9LoLfeNgZITOnndKHxM+7ltEciAIR7uE0SZlsOg==}
+    dev: false
 
   /@types/uglify-js/3.13.1:
     resolution: {integrity: sha512-O3MmRAk6ZuAKa9CHgg0Pr0+lUOqoMLpc9AS4R8ano2auvsg7IE8syF3Xh/NPr26TWklxYcqoEEFdzLLs1fV9PQ==}
@@ -4842,19 +4850,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dev: false
-
-  /follow-redirects/1.14.5_debug@4.3.2:
-    resolution: {integrity: sha512-wtphSXy7d4/OR+MvIFbCVBDzZ5520qV8XfPklSN5QtxuMUJZ+b0Wnst1e1lCDocfzuCkHqj8k0FpZqO+UIaKNA==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    dependencies:
-      debug: 4.3.2_supports-color@6.1.0
-    dev: true
 
   /for-in/1.0.2:
     resolution: {integrity: sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=}
@@ -5546,7 +5541,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.14.5_debug@4.3.2
+      follow-redirects: 1.14.5
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -9346,6 +9341,10 @@ packages:
       neo-async: 2.6.2
       webpack: 4.46.0
     dev: true
+
+  /three/0.134.0:
+    resolution: {integrity: sha512-LbBerg7GaSPjYtTOnu41AMp7tV6efUNR3p4Wk5NzkSsNTBuA5mDGOfwwZL1jhhVMLx9V20HolIUo0+U3AXehbg==}
+    dev: false
 
   /through/2.3.8:
     resolution: {integrity: sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=}

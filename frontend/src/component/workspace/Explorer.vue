@@ -1,7 +1,6 @@
 <template>
-  <div class="main">
-    <ui-button text="Create Project" icon="plus" />
-    <ui-button @click="$router.push('/workspace/228')" text="Open Project" icon="arrow_up" />
+  <div>
+    <div v-for="x in 100" :key="x">2</div>
   </div>
 </template>
 
@@ -9,6 +8,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
+  props: {},
   components: {},
   async mounted() {},
   methods: {},
@@ -18,7 +18,4 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
-.main {
-}
-</style>
+<style lang="scss" scoped></style>
