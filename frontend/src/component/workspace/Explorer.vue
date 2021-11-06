@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <div v-for="x in 100" :key="x">2</div>
+  <div :class="$style.explorer">
+    <div :class="$style.item" v-for="object in $store.state.workspace.objects" :key="object.id">
+      {{ object.name }}
+    </div>
   </div>
 </template>
 
@@ -18,4 +20,13 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" module>
+.explorer {
+  .item {
+    background-color: #252525;
+    padding: 2px;
+    margin-bottom: 2px;
+    color: #999999;
+  }
+}
+</style>
