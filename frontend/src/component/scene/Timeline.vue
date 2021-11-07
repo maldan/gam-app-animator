@@ -1,16 +1,22 @@
 <template>
   <div :class="$style.component">
-    <div :class="$style.name" v-for="object in $store.state.scene.objects" :key="object">
-      {{ object.name }}
+    <div
+      :class="[$style.name, object === $store.state.scene.selectedObject ? $style.selected : null]"
+      v-for="object in $store.state.scene.objects"
+      :key="object"
+    >
+      <div :class="$style.title">{{ object.name }}</div>
+      <div :class="$style.strip"></div>
     </div>
 
     <div
       :class="$style.object"
       v-for="(object, index) in $store.state.scene.objects"
       :key="object"
-      :style="{ top: 7 + index * 22 + 'px' }"
+      :style="{ top: 7 + index * 25 + 'px' }"
     >
       <div
+        class="clickable"
         :class="$style.item"
         v-for="key in object.keys"
         :key="key"
@@ -46,12 +52,31 @@ export default defineComponent({
   user-select: none;
 
   .name {
-    background-color: #353535;
     margin-bottom: 2px;
-    width: 140px;
-    padding: 2px;
     font-size: 14px;
     box-sizing: border-box;
+    display: flex;
+    height: 24px;
+    align-items: center;
+
+    .title {
+      width: 140px;
+      background-color: #353535;
+    }
+
+    .strip {
+      background-color: #161616;
+      height: 100%;
+      width: 200px;
+    }
+
+    &.selected {
+      .title {
+        background-color: #d16c0e;
+        color: #2a2a2a;
+        font-weight: bold;
+      }
+    }
   }
 
   .object {
