@@ -1,6 +1,6 @@
 {
   "name": "@maldan/gam-app-animator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Animator",
   "main": "index.js",
   "scripts": {},
