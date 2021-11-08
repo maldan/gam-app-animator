@@ -3,18 +3,18 @@ import { ActionContext } from 'vuex';
 import { MainTree } from '.';
 
 export type ProjectStore = {
-  list: any[];
+  sceneList: any[];
 };
 export type ProjectActionContext = ActionContext<ProjectStore, MainTree>;
 
 export default {
   namespaced: true,
   state: {
-    list: [],
+    sceneList: [],
   },
   mutations: {
-    SET_LIST(state: ProjectStore, list: any[]) {
-      state.list = list;
+    SET_SCENE_LIST(state: ProjectStore, list: any[]) {
+      state.sceneList = list;
     },
   },
   actions: {
@@ -22,9 +22,12 @@ export default {
       await Axios.post(`${action.rootState.main.API_URL}/project`, action.rootState.modal.data);
       action.dispatch('getList');
     },
-    async getList(action: ProjectActionContext) {
-      const list = (await Axios.get(`${action.rootState.main.API_URL}/project/list`)).data.response;
-      action.commit('SET_LIST', list);
+
+    async getSceneList(action: ProjectActionContext, projectId: string) {
+      const list = (
+        await Axios.get(`${action.rootState.main.API_URL}/project/sceneList?id=${projectId}`)
+      ).data.response;
+      action.commit('SET_SCENE_LIST', list);
     },
   },
 };

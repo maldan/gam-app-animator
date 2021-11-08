@@ -3,12 +3,30 @@
     <div
       :class="$style.scene"
       class="clickable"
-      @click="$router.push('/scene/4')"
-      v-for="x in 10"
-      :key="x"
+      @click="$router.push(`/scene/${$route.params.id}/${scene.id}`)"
+      v-for="scene in $store.state.project.sceneList"
+      :key="scene.id"
     >
-      {{ x }}
+      {{ scene.name }}
+      {{ $root.moment(scene.created).fromNow() }}
     </div>
+    <ui-button
+      :class="$style.button"
+      @click="
+        $store.dispatch('modal/show', {
+          name: 'add/scene',
+          data: {
+            name: '',
+            projectId: $route.params.id,
+          },
+          onSuccess: () => {
+            $store.dispatch('scene/add');
+          },
+        })
+      "
+      text="New Scene"
+      icon="plus"
+    />
   </div>
 </template>
 
@@ -17,7 +35,9 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   components: {},
-  async mounted() {},
+  async mounted() {
+    this.$store.dispatch('project/getSceneList', this.$route.params.id);
+  },
   methods: {},
   data: () => {
     return {};
@@ -46,6 +66,12 @@ export default defineComponent({
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .button {
+    flex: none;
+    height: 48px;
+    margin: auto;
   }
 }
 </style>

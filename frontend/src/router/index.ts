@@ -10,12 +10,12 @@ const routes: Array<RouteRecordRaw> = [
     component: Main,
   },
   {
-    path: '/scene/:id',
+    path: '/scene/:projectId/:id',
     name: 'Scene',
     component: Scene,
   },
   {
-    path: '/Project/:id',
+    path: '/project/:id',
     name: 'Project',
     component: Project,
   },

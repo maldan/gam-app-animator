@@ -7,10 +7,10 @@
           name: 'add/project',
           data: {
             name: '',
-            path: '',
-            width: '',
-            height: '',
-            fps: '',
+            path: '/home/maldan/animator',
+            width: '1280',
+            height: '720',
+            fps: '60',
           },
           onSuccess: () => {
             $store.dispatch('project/add');
@@ -21,7 +21,7 @@
       icon="plus"
     />
     <ui-button
-      v-for="item in $store.state.project.list"
+      v-for="item in $store.state.main.projectList"
       @click="$router.push(`/project/${item.id}`)"
       :key="item.id"
       :class="$style.button"

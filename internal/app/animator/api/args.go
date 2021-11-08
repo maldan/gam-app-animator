@@ -4,5 +4,5 @@ type ArgsEmpty struct {
 }
 
 type ArgsId struct {
-	Id string
+	Id string `string:"id"`
 }

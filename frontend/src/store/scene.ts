@@ -7,7 +7,6 @@ export type SceneStore = {
   scene: any;
   selectedObject: IObject;
   objects: IObject[];
-  list: any[];
 };
 export type SceneActionContext = ActionContext<SceneStore, MainTree>;
 
@@ -18,6 +17,7 @@ export default {
     height: 1080,
     fps: 60,
     selectedObject: null,
+
     objects: [
       {
         id: '1',
@@ -64,19 +64,11 @@ export default {
       },
     ],
   },
-  mutations: {
-    SET_LIST(state: SceneStore, list: any[]) {
-      state.list = list;
-    },
-  },
+  mutations: {},
   actions: {
     async add(action: SceneActionContext) {
       await Axios.post(`${action.rootState.main.API_URL}/scene`, action.rootState.modal.data);
       action.dispatch('getList');
-    },
-    async getList(action: SceneActionContext) {
-      const list = (await Axios.get(`${action.rootState.main.API_URL}/scene/list`)).data.response;
-      action.commit('SET_LIST', list);
     },
   },
 };
