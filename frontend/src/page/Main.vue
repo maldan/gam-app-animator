@@ -1,7 +1,33 @@
 <template>
-  <div class="main">
-    <ui-button text="Create Project" icon="plus" />
-    <ui-button @click="$router.push('/project/228')" text="Open Project" icon="arrow_up" />
+  <div :class="$style.main">
+    <ui-button
+      :class="$style.button"
+      @click="
+        $store.dispatch('modal/show', {
+          name: 'add/project',
+          data: {
+            name: '',
+            path: '',
+            width: '',
+            height: '',
+            fps: '',
+          },
+          onSuccess: () => {
+            $store.dispatch('project/add');
+          },
+        })
+      "
+      text="Create Project"
+      icon="plus"
+    />
+    <ui-button
+      v-for="item in $store.state.project.list"
+      @click="$router.push(`/project/${item.id}`)"
+      :key="item.id"
+      :class="$style.button"
+      :text="item.name"
+      icon="arrow_up"
+    />
   </div>
 </template>
 
@@ -18,7 +44,25 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style module lang="scss">
+@import '../gam_sdk_ui/vue/style/color.scss';
+@import '../gam_sdk_ui/vue/style/size.scss';
+
 .main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .button {
+    flex: none;
+    width: 220px;
+    margin-bottom: $gap-base;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 </style>

@@ -48,9 +48,9 @@ export class AnimatorScene {
         e.preventDefault();
 
         if (e.deltaY > 0) {
-          this.camera.zoom *= 1.05;
-        } else {
           this.camera.zoom *= 0.95;
+        } else {
+          this.camera.zoom *= 1.05;
         }
       },
       { passive: false },
